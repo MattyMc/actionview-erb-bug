@@ -74,9 +74,13 @@ echo "Rails.application.routes.draw do
   root 'posts#new'
 end" > config/routes.rb
 
+
+# Print completion message
+echo "Rails app 'actionview-erb-bug' is set up, routes have been updated, and the server is running."
+echo "IMPORTANT: Use the command below to kill the server process if it triggers an infinite loop:"
+echo "kill -9 $(lsof -i tcp:3000 -t)"
+
 # Start the Rails server
 echo "Starting the Rails server..."
 rails server
 
-# Print completion message
-echo "Rails app 'actionview-erb-bug' is set up, routes have been updated, and the server is running."
