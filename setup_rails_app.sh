@@ -13,12 +13,10 @@ REQUIRED_RAILS_VERSION="7.1.3.4"
 check_ruby_version() {
   ruby_version=$(ruby -v | awk '{print $2}')
   if [ "$ruby_version" != "$REQUIRED_RUBY_VERSION" ]; then
-    echo "Ruby version $REQUIRED_RUBY_VERSION is required."
-    echo "You are using Ruby $ruby_version."
+    echo "Ruby version $REQUIRED_RUBY_VERSION is required, you are using Ruby $ruby_version"
     echo "Please install and use Ruby $REQUIRED_RUBY_VERSION."
-    echo "If you are using rvm, you can install and use the correct version with the following commands:"
-    echo "rvm install $REQUIRED_RUBY_VERSION"
-    echo "rvm use $REQUIRED_RUBY_VERSION --default"
+    echo "If you are using rvm:"
+    echo "rvm use $REQUIRED_RUBY_VERSION"
     exit 1
   fi
 }
